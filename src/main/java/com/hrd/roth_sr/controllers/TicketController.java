@@ -190,6 +190,10 @@ public class TicketController {
         return ResponseEntity.status(HttpStatus.OK).body(new APIResponse<>(true, "updated successfully.", HttpStatus.OK, new TicketResponse(updateTicket)));
     }
 
+    @PutMapping
+    public ResponseEntity<APIResponse<List<TicketResponse>>> update(@RequestBody Long[] ids, @RequestBody List<TicketRequest> list){
+        return null;
+    }
 
     @DeleteMapping("/{ticket-id}")
     public ResponseEntity<APIResponse<Void>> removeById(@PathVariable("ticket-id") Long id){
