@@ -192,7 +192,7 @@ public class TicketController {
 
 
     @DeleteMapping("/{ticket-id}")
-    public ResponseEntity<APIResponse<Objects>> removeById(@PathVariable("ticket-id") Long id){
+    public ResponseEntity<APIResponse<Void>> removeById(@PathVariable("ticket-id") Long id){
         boolean isRemoved = ticketList.removeIf(ticket -> ticket.getTicketId().equals(id));
 
         if(isRemoved){
